@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 const NavComponent = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+        <div class="container-md">
           <button
             className="navbar-toggler"
             type="button"
@@ -36,6 +36,11 @@ const NavComponent = () => {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/profile">
                   個人檔案
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/post">
+                  刊登
                 </NavLink>
               </li>
             </ul>

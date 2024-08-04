@@ -1,5 +1,5 @@
 import FilterComponent from "../components/filter-component";
-import RentList from "../components/rent-list";
+import RentList from "../components/rentList-component";
 
 const Homepage = () => {
   return (
