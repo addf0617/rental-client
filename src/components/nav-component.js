@@ -1,6 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useUser } from "../context/userContext";
+
+import AuthService from "../services/auth_service";
 
 const NavComponent = () => {
+  const { currentUser, setCurrentUser } = useUser();
+  const Navigate = useNavigate();
+  const handleLogout = (e) => {
+    e.preventDefault();
+    AuthService.logout();
+    window.alert("登出成功");
+    setCurrentUser(AuthService.logout());
+    Navigate("/");
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary ">
@@ -23,26 +36,41 @@ const NavComponent = () => {
                   首頁
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/login">
-                  登入
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/register">
-                  註冊
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/profile">
-                  個人檔案
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/post">
-                  刊登
-                </NavLink>
-              </li>
+              {!currentUser && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/login">
+                    登入
+                  </NavLink>
+                </li>
+              )}
+              {!currentUser && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/register">
+                    註冊
+                  </NavLink>
+                </li>
+              )}
+              {currentUser && (
+                <li className="nav-item">
+                  <NavLink onClick={handleLogout} className="nav-link" to="/">
+                    登出
+                  </NavLink>
+                </li>
+              )}
+              {currentUser && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/profile">
+                    個人檔案
+                  </NavLink>
+                </li>
+              )}
+              {currentUser && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/post">
+                    刊登
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </div>
         </div>

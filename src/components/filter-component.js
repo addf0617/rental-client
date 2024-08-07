@@ -1,6 +1,6 @@
 const FilterComponent = () => {
   return (
-    <div className="fs-5">
+    <div className="fs-6">
       <section
         className="container my-3 pt-2 d-flex flex-column justify-content-center bg-secondary bg-opacity-10
  "
