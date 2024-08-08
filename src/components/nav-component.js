@@ -17,7 +17,7 @@ const NavComponent = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary ">
-        <div class="container-md">
+        <div className="container-md">
           <button
             className="navbar-toggler"
             type="button"

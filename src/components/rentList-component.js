@@ -1,13 +1,11 @@
 import CardComponent from "./card-component";
 
-const RentList = () => {
+const RentList = ({ rentsData }) => {
   return (
-    <div className="container d-flex flex-wrap justify-content-center">
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
+    <div className="container-fluid d-flex flex-wrap justify-content-center">
+      {rentsData.map((rent) => {
+        return <CardComponent key={rent._id} rentData={rent} />;
+      })}
     </div>
   );
 };
