@@ -23,6 +23,10 @@ class RentalService {
     return await axios.get(`${API_URL}/${_id}`);
   }
 
+  async getRentalByUserId(_id) {
+    return await axios.get(`${API_URL}/user/${_id}`);
+  }
+
   async createRental(rental) {
     return await axios.post(API_URL, rental);
   }

@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useUser } from "../context/userContext";
+
+import RentList from "../components/rentList-component";
+import rental_service from "../services/rental_service";
 
 const ProfilePage = () => {
   const { currentUser, setCurrentUser } = useUser();
-  console.log(currentUser);
+  const [message, setMessage] = useState("");
+  const [rentsData, setRentsData] = useState([]);
+
+  useEffect(() => {
+    if (currentUser) {
+      rental_service
+        .getRentalByUserId(currentUser.user._id)
+        .then((res) => {
+          console.log(res.data);
+          setRentsData(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+          if (err.response && err.response.status === 404)
+            setMessage("找不到資料");
+          else setMessage(err.message);
+        });
+    }
+  }, []);
 
   return (
     <div>
@@ -31,9 +52,18 @@ const ProfilePage = () => {
                 <td>信箱：{currentUser.user.email}</td>
               </tr>
             </tbody>
-            <button className="btn btn-danger">刪除帳號</button>
           </table>
-          <div>已刊登的房屋</div>
+          <div className="row">
+            <h3>
+              <strong>我出租的房屋</strong>
+            </h3>
+          </div>
+          {message && (
+            <div className="row">
+              <div className="alert alert-danger">{message}</div>
+            </div>
+          )}
+          <RentList rentsData={rentsData} />
         </div>
       )}
     </div>
