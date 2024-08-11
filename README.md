@@ -12,4 +12,10 @@
 card_component 外觀完成，個人檔案畫面新增已出租房屋列表，新增 icon
 待完成房屋畫面
 
+房屋畫面用到一半，postPage 功能用到一半
+
+postPage 完成房屋畫面也完成，新增 footerComponent、contactPage
+
+至此已經大致上完成 <3
+
 登入及註冊畫面的 onClick 事件登改為表單的 onSubmit 事件，這樣保留了 HTML 表單自帶的驗證功能

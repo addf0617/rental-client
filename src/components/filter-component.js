@@ -46,7 +46,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value=""
                 checked={District === ""}
               />
-              <label className="form-check-label" for="DistrictRadio1">
+              <label className="form-check-label" htmlFor="DistrictRadio1">
                 不限
               </label>
             </div>
@@ -59,7 +59,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="北區"
                 checked={District === "北區"}
               />
-              <label className="form-check-label" for="DistrictRadio2">
+              <label className="form-check-label" htmlFor="DistrictRadio2">
                 北區
               </label>
             </div>
@@ -72,7 +72,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="中區"
                 checked={District === "中區"}
               />
-              <label className="form-check-label" for="DistrictRadio3">
+              <label className="form-check-label" htmlFor="DistrictRadio3">
                 中區
               </label>
             </div>
@@ -85,7 +85,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="南區"
                 checked={District === "南區"}
               />
-              <label className="form-check-label" for="DistrictRadio4">
+              <label className="form-check-label" htmlFor="DistrictRadio4">
                 南區
               </label>
             </div>
@@ -98,7 +98,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="東區"
                 checked={District === "東區"}
               />
-              <label className="form-check-label" for="DistrictRadio5">
+              <label className="form-check-label" htmlFor="DistrictRadio5">
                 東區
               </label>
             </div>
@@ -118,7 +118,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value=""
                 checked={type === ""}
               />
-              <label className="form-check-label" for="typeRadio1">
+              <label className="form-check-label" htmlFor="typeRadio1">
                 不限
               </label>
             </div>
@@ -131,7 +131,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="獨立套房"
                 checked={type === "獨立套房"}
               />
-              <label className="form-check-label" for="typeRadio2">
+              <label className="form-check-label" htmlFor="typeRadio2">
                 獨立套房
               </label>
             </div>
@@ -144,7 +144,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="分租套房"
                 checked={type === "分租套房"}
               />
-              <label className="form-check-label" for="typeRadio3">
+              <label className="form-check-label" htmlFor="typeRadio3">
                 分租套房
               </label>
             </div>
@@ -157,7 +157,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="雅房"
                 checked={type === "雅房"}
               />
-              <label className="form-check-label" for="typeRadio4">
+              <label className="form-check-label" htmlFor="typeRadio4">
                 雅房
               </label>
             </div>
@@ -170,7 +170,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="整層住家"
                 checked={type === "整層住家"}
               />
-              <label className="form-check-label" for="typeRadio5">
+              <label className="form-check-label" htmlFor="typeRadio5">
                 整層住家
               </label>
             </div>
@@ -183,7 +183,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="整棟住家"
                 checked={type === "整棟住家"}
               />
-              <label className="form-check-label" for="typeRadio6">
+              <label className="form-check-label" htmlFor="typeRadio6">
                 整棟住家
               </label>
             </div>
@@ -203,7 +203,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value=""
                 checked={maxPrice === ""}
               />
-              <label className="form-check-label" for="rentalRadio1">
+              <label className="form-check-label" htmlFor="rentalRadio1">
                 不限
               </label>
             </div>
@@ -216,7 +216,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="10000"
                 checked={maxPrice === "10000"}
               />
-              <label className="form-check-label" for="rentalRadio2">
+              <label className="form-check-label" htmlFor="rentalRadio2">
                 小於10000
               </label>
             </div>
@@ -229,7 +229,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="20000"
                 checked={maxPrice === "20000"}
               />
-              <label className="form-check-label" for="rentalRadio3">
+              <label className="form-check-label" htmlFor="rentalRadio3">
                 小於20000
               </label>
             </div>
@@ -242,7 +242,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                 value="50000"
                 checked={maxPrice === "50000"}
               />
-              <label className="form-check-label" for="rentalRadio4">
+              <label className="form-check-label" htmlFor="rentalRadio4">
                 小於50000
               </label>
             </div>

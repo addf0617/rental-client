@@ -13,11 +13,15 @@ import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";
 import NotfoundPage from "./pages/NotfoundPage";
 import PostPage from "./pages/PostPage";
+import HousePage from "./pages/HousePage";
+import ContactPage from "./pages/ContactPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Homepage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/:id" element={<HousePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/profile" element={<ProfilePage />} />

@@ -21,6 +21,8 @@ const ProfilePage = () => {
           console.log(err);
           if (err.response && err.response.status === 404)
             setMessage("找不到資料");
+          else if (err.response && err.response.data)
+            setMessage(err.response.data.message);
           else setMessage(err.message);
         });
     }

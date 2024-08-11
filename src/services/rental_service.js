@@ -19,6 +19,10 @@ class RentalService {
     return await axios.get(`${API_URL}/image/${_id}`);
   }
 
+  getImgURL(id) {
+    return `${API_URL}/image/${id}`;
+  }
+
   async getRentalById(_id) {
     return await axios.get(`${API_URL}/${_id}`);
   }
@@ -28,11 +32,21 @@ class RentalService {
   }
 
   async createRental(rental) {
-    return await axios.post(API_URL, rental);
+    let token;
+    if (localStorage.getItem("user")) {
+      token = JSON.parse(localStorage.getItem("user")).token;
+    } else token = "";
+    return await axios.post(API_URL, rental, {
+      headers: { Authorization: token, "Content-Type": "multipart/form-data" },
+    });
   }
 
   async deleteRental(_id) {
-    return await axios.delete(`${API_URL}/${_id}`);
+    return await axios.delete(`${API_URL}/${_id}`, {
+      headers: {
+        Authorization: JSON.parse(localStorage.getItem("user")).token,
+      },
+    });
   }
 }
 

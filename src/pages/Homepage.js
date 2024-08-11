@@ -21,12 +21,14 @@ const Homepage = () => {
         console.log(err);
         if (err.response && err.response.status === 404)
           setMessage("找不到資料");
+        else if (err.response && err.response.data)
+          setMessage(err.response.data.message);
         else setMessage(err.message);
       });
   }, [filter]);
 
   return (
-    <div>
+    <div className="container">
       <FilterComponent setFilter={setFilter} filter={filter} />
       {message && (
         <div className="container">

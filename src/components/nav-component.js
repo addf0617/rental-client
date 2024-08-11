@@ -71,6 +71,11 @@ const NavComponent = () => {
                   </NavLink>
                 </li>
               )}
+              <li className="nav-item">
+                <NavLink className="nav-link " to="/contact">
+                  聯絡我
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

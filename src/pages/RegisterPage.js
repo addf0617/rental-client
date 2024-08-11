@@ -1,8 +1,9 @@
 import { React, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AuthService from "../services/auth_service";
 
 const RegisterPage = () => {
+  let Navigate = useNavigate();
   let [userdata, setUserdata] = useState({
     username: "",
     email: "",

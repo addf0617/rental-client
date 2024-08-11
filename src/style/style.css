@@ -1,0 +1,39 @@
+.fit-cover {
+  object-fit: cover;
+}
+
+.custom-card:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.custom-card img {
+  transform: scale(1, 1);
+  transition: all 0.5s ease-out;
+}
+
+.custom-card img:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.image-container {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.image-container img {
+  object-fit: cover;
+}
+
+.footer {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .fit-cover {
+    position: absolute;
+  }
+}

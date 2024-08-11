@@ -1,13 +1,20 @@
 import React from "react";
-import "../style/card.css";
+import { useNavigate } from "react-router-dom";
+import "../style/style.css";
+import rental_service from "../services/rental_service";
 
 const CardComponent = ({ rentData }) => {
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    navigate(`/${rentData._id}`);
+  };
+
   return (
-    <div className="card mb-3">
+    <div className="card custom-card mb-3 pe-auto" onClick={handleClick}>
       <div className="row g-0">
         <div className="col-sm-4 position-relative overflow-hidden">
           <img
-            src={`http://localhost:8080/api/rental/image/${rentData._id}`}
+            src={rental_service.getImgURL(rentData._id)}
             className="card-img fit-cover w-100 h-100"
             alt={rentData.title}
           />
