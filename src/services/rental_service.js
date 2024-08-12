@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/rental";
+const API_URL = "https://rental-server-nnbh.onrender.com/api/rental";
 
 class RentalService {
   async getRentals(filter) {
