@@ -15,11 +15,13 @@ const PostPage = () => {
     price: 0,
     image: "",
   });
+  const [buttonDisable, setButtonDisable] = useState(true);
   const { currentUser } = useUser();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setButtonDisable("disabled");
     let formData = new FormData();
     //遍歷houseData並將其轉為formData
     for (const [key, value] of Object.entries(houseData)) {
@@ -28,12 +30,14 @@ const PostPage = () => {
     rental_service
       .createRental(formData)
       .then((res) => {
-        window.alert("上傳成功");
+        setButtonDisable("");
         setMessage("");
+        window.alert("上傳成功");
         navigate("/profile");
       })
       .catch((err) => {
         console.log(err);
+        setButtonDisable("");
         if (err.response.data && err.response.data.message) {
           setMessage(err.response.data.message);
         } else if (err.response.data) setMessage(err.response.data);
@@ -214,7 +218,7 @@ const PostPage = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className={`btn btn-primary ${buttonDisable}`}>
             刊登房屋
           </button>
         </form>

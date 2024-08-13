@@ -22,12 +22,18 @@ const CardComponent = ({ rentData }) => {
         <div className="col-sm-8">
           <div className="card-body">
             <h5 className="card-title">{rentData.title}</h5>
-            <p className="card-text">
+            <p className="card-text" style={{ marginBottom: "0.5rem" }}>
               <i
                 className="fa-solid fa-location-dot"
                 style={{ color: "#615fdd" }}
               ></i>
               地址：{rentData.address}
+            </p>
+            <p
+              className="card-text"
+              style={{ marginBottom: "0.5rem", color: "#E71218" }}
+            >
+              <strong>{rentData.price} / 月</strong>
             </p>
             <span className="badge rounded-pill bg-primary">
               {rentData.District}
